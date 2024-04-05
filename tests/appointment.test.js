@@ -366,7 +366,7 @@ async function bookAppointment(
 
     // Wait for first email (confirmation or verification code) to arrive.
     logger.debug(
-      `Waiting for first email (verification or confirmation) to arrive at inbox with id ${inboxId} ...`
+      `Waiting for first email (ication or confirmation) to arrive at inbox with id ${inboxId} ...`
     );
     // TODO: "fetch failed" error message sporadically occurs here.
     const firstEmail = await mailslurp.waitForLatestEmail(
@@ -390,7 +390,7 @@ async function bookAppointment(
       await expect(async () => {
         await Promise.all([
           page.waitForNavigation(),
-          page.getByRole("button", { name: "Termin verifzieren" }).click(),
+          page.getByRole("button", { name: "Termin verifizieren" }).click(),
         ]);
         await expect(
           page.getByRole("heading", { name: "Terminbestätigung" })
